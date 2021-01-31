@@ -5,6 +5,7 @@ This is a Demo script to show how a JSON file, compiled from an Ink project,
 can be read in and navigated using the Story API.
 */
 using Ink.Runtime;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

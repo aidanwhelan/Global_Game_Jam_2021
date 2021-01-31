@@ -1,4 +1,5 @@
 using Ink.Runtime;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -37,7 +38,7 @@ public class ChoiceScript : MonoBehaviour
     {
         List<string> outputList = new List<string>();
         int randNum = 0;
-        Random rnd = new Random();
+        System.Random rnd = new System.Random();
         for(int i = 0; i < 4; i++)
         {
             randNum = rnd.Next(choices.Count);
@@ -46,5 +47,11 @@ public class ChoiceScript : MonoBehaviour
         }
 
         return outputList;
+    }
+
+    public string DemoMethod()
+    {
+      string outString = "Out";
+      return outString;
     }
 }
