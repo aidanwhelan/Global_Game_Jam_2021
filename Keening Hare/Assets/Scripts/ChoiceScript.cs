@@ -15,7 +15,7 @@ public class ChoiceScript : MonoBehaviour
 
     public List<int> outputIndexList = new List<int>();
 
-    void Start()
+    void Awake()
     {
         story = new Story(inkJSON.text);
     }
