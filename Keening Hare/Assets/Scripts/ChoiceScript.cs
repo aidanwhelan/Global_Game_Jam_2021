@@ -51,7 +51,7 @@ public class ChoiceScript : MonoBehaviour
 
     public string DemoMethod()
     {
-      string outString = "Out";
+      string outString = "Heya, chaff! This is pure gem!";
       return outString;
     }
 }
