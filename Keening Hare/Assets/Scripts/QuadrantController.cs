@@ -46,6 +46,8 @@ public class QuadrantController : MonoBehaviour
             QuadrantSelected();
             selectionAvailable = false;
             Debug.Log(gameObject + " was selected");
+
+            choiceColor = false;
         }
     }
 
@@ -61,7 +63,7 @@ public class QuadrantController : MonoBehaviour
         choiceColor = true;
         currentChoiceNum = choiceNum;
         gameObject.GetComponent<Text>().text = textToDisplay;
-        Debug.Log(gameObject + " displayed " + textToDisplay + "       and choiceColor is " + choiceColor);
+        Debug.Log(gameObject + " displayed " + textToDisplay + "       and choiceColor is " + choiceColor + ". Its choice number is " + choiceNum);
         selectionAvailable = true;
         //smoothly change text color to orange
         //display text
@@ -79,7 +81,14 @@ public class QuadrantController : MonoBehaviour
     {
         choiceColor = false;
         selectionAvailable = false;
+        gameObject.GetComponent<Text>().text = "";
+
         Debug.Log(gameObject + " had its text cleared");
         //delete all text
+    }
+
+    public void EraseText()
+    {
+        gameObject.GetComponent<Text>().text = "";
     }
 }

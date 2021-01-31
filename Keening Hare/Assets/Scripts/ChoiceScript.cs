@@ -9,6 +9,12 @@ public class ChoiceScript : MonoBehaviour
     public TextAsset inkJSON;
     public Story story;
 
+    private List<int> indexList = new List<int>();
+
+    private int randIndex;
+
+    public List<int> outputIndexList = new List<int>();
+
     void Start()
     {
         story = new Story(inkJSON.text);
@@ -76,28 +82,63 @@ public class ChoiceScript : MonoBehaviour
     public List<string> ChooseFullChoices()
     {
         List<string> outputList = new List<string>();
+        outputList.Clear();
+        outputIndexList.Clear();
+        indexList.Clear();
         int choiceListLength = story.currentChoices.Count;
         Debug.Log(choiceListLength);
+
         for(int i=0; i<choiceListLength; i++)
         {
-            //LATER ADD ACTUAL RANDOMNESS
-            outputList.Add(story.currentChoices[i].text);
+            indexList.Add(i);
         }
-        Debug.Log(outputList[0]);
+        for(int i=0; i<4 && i<choiceListLength; i++)
+        {
+            randIndex = indexList[(int) UnityEngine.Random.Range(0, indexList.Count - 1)];
+            //LATER ADD ACTUAL RANDOMNESS
+            outputList.Add(story.currentChoices[randIndex].text);
+            indexList.Remove(randIndex);
+            outputIndexList.Add(randIndex);
+        }
+        //Debug.Log(outputList[0]);
         return outputList;
     }
     public List<string> ChooseThreeChoices()
     {
         List<string> outputList = new List<string>();
+        outputList.Clear();
+        outputIndexList.Clear();
+        indexList.Clear();
+        int choiceListLength = story.currentChoices.Count;
+        Debug.Log(choiceListLength);
 
+        for(int i=0; i<3 && i<choiceListLength; i++)
+        {
+            indexList.Add(i);
+        }
         for(int i=0; i<3; i++)
         {
+            randIndex = indexList[(int) UnityEngine.Random.Range(0, indexList.Count - 1)];
             //LATER ADD ACTUAL RANDOMNESS
-            if (story.currentChoices[i] != null)
-            {outputList.Add(story.currentChoices[i].text);}
+            outputList.Add(story.currentChoices[randIndex].text);
+            indexList.Remove(randIndex);
+            outputIndexList.Add(randIndex);
         }
-
+        //Debug.Log(outputList[0]);
         return outputList;
+    }
+
+    public bool AmIAtTheEnd()
+    {
+        if(story.canContinue == false && story.currentChoices.Count == 0)
+        {
+            return true;
+        }
+        else
+        {
+            Debug.Log("current choice count is actually " + story.currentChoices.Count + " and canContinue is " + story.canContinue);
+            return false;
+        }
     }
 }
 
