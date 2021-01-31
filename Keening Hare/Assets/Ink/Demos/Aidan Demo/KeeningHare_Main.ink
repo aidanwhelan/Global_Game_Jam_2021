@@ -272,5 +272,68 @@ IF bright or dim: (RETURN TO HENGE ENTRANCE)
         
 
 === Endgame_Chapter ===
-The End.
+With my candles burnt down to wax tendrils and the moon sinking below the crowns of the frightened trees, the darkness of the wood became absolute.
+* I stumbled blindly through the undergrowth[…] until my foot twisted in a divot in the ground.
+I tried to get back on my feet, but I could not stand. I fell to the ground under a towering tree, and the forest seemed to fall silent. Then I heard a voice.
+‘Child,’ it said. ‘Why are you resting beneath my tree?’ 
+-> DIALOGUE1
+* Exhausted, I fell to my knees and rested my head against the warped bark of an old tree.
+The forest seemed to fall silent. Then I heard a voice.
+‘Child,’ it said. ‘Why are you resting beneath my tree?’
+-> DIALOGUE1
+I called out to the Keening Hare, desperate for my journey not to end in vain. Eventually, as dawn’s first light peeked through the thicket, I fell silent, hopes crushed.
+-> DIALOGUE1
+
+
+=== DIALOGUE1 ===
+* I froze and could not respond.
+‘Are you afraid of me?’ asked the voice. ‘Are you afraid of the Keening Hare?’
+    * * ‘No — I know that you are kind’.
+    ‘I am not so sure. What have you gleaned from these woods?’
+    -> APP1
+    * * ‘No — I know that you are just a hare, and I’m not a kid anymore’. 
+    The voice went silent and a gust of wind shook the trees, and the stars themselves seemed to shift. A hare of normal size hopped out from its burrow underneath the tree and looked at me, its black eyes glistening in the first light of dawn with some mixture of mild fright and confusion. It hopped away dumbly.
+    -> END2
+    * *  ‘Yes  — I know that you are to be feared. 
+    ‘I know much the same about your kind’ responded the Hare. ‘But tell me  — what have you gleaned from these woods?’
+    -> APP1
+
+=== APP1 ===
+
+* ‘I saw my reflection…’
+‘You saw my face in place of your own, did you not? Indeed, my child...these woods make beasts of us all’. 
+-> APP1
+
+* ‘I danced to the rhythm of the forest…’
+‘You’ve made quite a name for yourself in these woods. It seems like something of the trees runs in your own veins’.
+-> APP1
+
+* ‘I saw the strangest things…’
+‘And the strangest things saw you, no doubt’.
+-> APP1
+
+* ‘I learned not to be lured down to the water’s edge…’
+‘It can be hard to tell old woodland wisdom from old wives’ tales…perhaps your being here is testament to that…’   
+-> APP1
+
+* ->EXIT
+
+
+=== END2 ===
+That night, as promised, my mother sat down to read me the fable of the Keening Hare. But what need did I have for tall tales and bedtime stories? I had come of age. 
+
+THE END.
+
+-> END
+
+
+=== EXIT ===
+As the sun reclaimed the woodland, I felt the forest shifting beneath my feet. It was as if a dam had burst — light flooded the woods, washing away the darkness and filling every sinew with new vigor. 
+
+I learned the ways of the woods from the Keening Hare. At first, his mournful howling in the night took me aback; but just as I got used to it, it began to abate, and contented silence took its place. I learned that grief  — whether of an entire forest or of a single Hare — changes as time goes by. By degrees, it turns from yawning despair into comfortable, plaintive nostalgia for old memories. 
+
+Perhaps that is the moral of the Keening Hare’s story.
+
+THE END.
+
 -> END
