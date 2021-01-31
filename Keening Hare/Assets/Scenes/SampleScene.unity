@@ -563,7 +563,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Quadrant 3
+  m_Text: 
 --- !u!222 &999209759
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -610,9 +610,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a516a54b25be04fd0b8f726a0716e7fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetColor: {r: 1, g: 0.8784314, b: 0.654902, a: 0}
+  currentChoiceNum: 0
   choiceColor: 0
-  paraColor: 1
+  selectionAvailable: 0
 --- !u!1 &1057727015
 GameObject:
   m_ObjectHideFlags: 0
@@ -860,6 +860,12 @@ MonoBehaviour:
   quadrantTwo: {fileID: 1258345322}
   quadrantThree: {fileID: 999209758}
   quadrantFour: {fileID: 1461377807}
+  centerText: {fileID: 1518848293}
+  quadrantList: []
+  choiceScript: {fileID: 1755779459}
+  displayingChoices: 0
+  currentParagraphLocation: {fileID: 0}
+  currentChoiceList: []
 --- !u!1 &1158369884
 GameObject:
   m_ObjectHideFlags: 0
@@ -984,7 +990,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Quadrant 1
+  m_Text: 
 --- !u!222 &1219087870
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1031,9 +1037,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a516a54b25be04fd0b8f726a0716e7fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetColor: {r: 1, g: 0.8784314, b: 0.654902, a: 0}
+  currentChoiceNum: 0
   choiceColor: 0
-  paraColor: 1
+  selectionAvailable: 0
 --- !u!1 &1258345320
 GameObject:
   m_ObjectHideFlags: 0
@@ -1106,7 +1112,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Quadrant 2
+  m_Text: 
 --- !u!222 &1258345323
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1153,9 +1159,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a516a54b25be04fd0b8f726a0716e7fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetColor: {r: 1, g: 0.8784314, b: 0.654902, a: 0}
+  currentChoiceNum: 0
   choiceColor: 0
-  paraColor: 1
+  selectionAvailable: 0
 --- !u!1 &1461377805
 GameObject:
   m_ObjectHideFlags: 0
@@ -1228,7 +1234,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Quadrant 4
+  m_Text: 
 --- !u!222 &1461377808
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1275,9 +1281,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a516a54b25be04fd0b8f726a0716e7fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetColor: {r: 1, g: 0.8784314, b: 0.654902, a: 0}
+  currentChoiceNum: 0
   choiceColor: 0
-  paraColor: 1
+  selectionAvailable: 0
 --- !u!1 &1518848291
 GameObject:
   m_ObjectHideFlags: 0
@@ -1289,6 +1295,7 @@ GameObject:
   - component: {fileID: 1518848292}
   - component: {fileID: 1518848294}
   - component: {fileID: 1518848293}
+  - component: {fileID: 1518848295}
   m_Layer: 5
   m_Name: CenterText
   m_TagString: Untagged
@@ -1358,6 +1365,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1518848291}
   m_CullTransparentMesh: 1
+--- !u!114 &1518848295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1518848291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82aeeaa74775b4a908a1778ceb3c5c4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1755779458
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1755779460}
+  - component: {fileID: 1755779459}
+  m_Layer: 0
+  m_Name: ChoiceManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1755779459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1755779458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 865892aea041ad04d8a32627f0bfa475, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inkJSON: {fileID: 4900000, guid: 49715d5d18a83f644afad5056a9461d9, type: 3}
+--- !u!4 &1755779460
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1755779458}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.0351624, y: 0.40297976, z: -531.7776}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1930178676
 GameObject:
   m_ObjectHideFlags: 0

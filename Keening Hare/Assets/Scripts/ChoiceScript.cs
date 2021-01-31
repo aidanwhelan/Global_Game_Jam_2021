@@ -6,6 +6,14 @@ using UnityEngine;
 
 public class ChoiceScript : MonoBehaviour
 {
+    public TextAsset inkJSON;
+    public Story story;
+
+    void Start()
+    {
+        story = new Story(inkJSON.text);
+    }
+
     //Chooses the indexed choice at a decision junction
     //Returns: String of all text between provided choice and next decision
     public string ChooseChoice(ref Story story, int index)
@@ -42,4 +50,54 @@ public class ChoiceScript : MonoBehaviour
       string outString = "Heya, chaff! This is pure gem!";
       return outString;
     }
+
+    public string loadStoryChunk()
+    {
+        string text = "";
+        if(story.canContinue)
+        {
+            text = story.Continue();
+        }
+        return text;
+    }
+
+    public bool AreThereChoicesToDisplay()
+    {
+        if(story.canContinue)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
+
+    public List<string> ChooseFullChoices()
+    {
+        List<string> outputList = new List<string>();
+        int choiceListLength = story.currentChoices.Count;
+        Debug.Log(choiceListLength);
+        for(int i=0; i<choiceListLength; i++)
+        {
+            //LATER ADD ACTUAL RANDOMNESS
+            outputList.Add(story.currentChoices[i].text);
+        }
+        Debug.Log(outputList[0]);
+        return outputList;
+    }
+    public List<string> ChooseThreeChoices()
+    {
+        List<string> outputList = new List<string>();
+
+        for(int i=0; i<3; i++)
+        {
+            //LATER ADD ACTUAL RANDOMNESS
+            if (story.currentChoices[i] != null)
+            {outputList.Add(story.currentChoices[i].text);}
+        }
+
+        return outputList;
+    }
 }
+
