@@ -42,6 +42,8 @@
      <Compile Include="Assets\Scripts\InkTestingScript.cs" />
      <Compile Include="Assets\Scripts\ChoiceScript.cs" />
      <Compile Include="Assets\Scripts\CrossCommunication.cs" />
+     <Compile Include="Assets\UIController.cs" />
+     <Compile Include="Assets\QuadrantController.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
