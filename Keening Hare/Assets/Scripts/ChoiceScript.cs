@@ -6,18 +6,6 @@ using UnityEngine;
 
 public class ChoiceScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     //Chooses the indexed choice at a decision junction
     //Returns: String of all text between provided choice and next decision
     public string ChooseChoice(ref Story story, int index)
