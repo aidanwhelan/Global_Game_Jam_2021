@@ -112,11 +112,11 @@ public class ChoiceScript : MonoBehaviour
         int choiceListLength = story.currentChoices.Count;
         Debug.Log(choiceListLength);
 
-        for(int i=0; i<3 && i<choiceListLength; i++)
+        for(int i=0; i<choiceListLength; i++)
         {
             indexList.Add(i);
         }
-        for(int i=0; i<3; i++)
+        for(int i=0; i<3 && i<choiceListLength; i++)
         {
             randIndex = indexList[(int) UnityEngine.Random.Range(0, indexList.Count - 1)];
             //LATER ADD ACTUAL RANDOMNESS
