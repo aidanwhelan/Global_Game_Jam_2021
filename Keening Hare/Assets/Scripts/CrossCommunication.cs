@@ -23,10 +23,13 @@ public class CrossCommunication : MonoBehaviour
     {
         //Create a Story object to navigate JSON text contents with Story API
         story = new Story(inkJSON.text);
-        string outString = ChoiceScript.GetComponent<ChoiceScript>().DemoMethod();
+        
+        string outString = ChoiceScript.GetComponent<ChoiceScript>().loadStoryChunk(story);
         Debug.Log(outString);
+        ChoiceScript.GetComponent<ChoiceScript>().FirstChoice(story);
 
-
+        outString = ChoiceScript.GetComponent<ChoiceScript>().loadStoryChunk(story);
+        Debug.Log(outString);
     }
 
     // Update is called once per frame
