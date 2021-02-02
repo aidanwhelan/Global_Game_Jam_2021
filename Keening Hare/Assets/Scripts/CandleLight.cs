@@ -19,7 +19,7 @@ public class CandleLight : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.position = Vector2.Lerp(transform.position, mousePosition, moveSpeed);
