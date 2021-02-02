@@ -19,7 +19,7 @@ public class CenterTextController : MonoBehaviour
         {
             if (gameObject.GetComponent<Text>().color != Color.black)
             {
-                gameObject.GetComponent<Text>().color = Color.Lerp(gameObject.GetComponent<Text>().color, Color.black, Time.fixedTime);
+                gameObject.GetComponent<Text>().color = Color.Lerp(gameObject.GetComponent<Text>().color, Color.black, Time.deltaTime);
             }
             else
             {
